@@ -1,0 +1,22 @@
+print('Temperature Conversion Calculator')
+print()
+print('To convert from Celsius to Farenheit please type: F')
+print('To convert from Farenheit to Celsius please type: C')
+
+try:
+
+  temp_scale = input('Please choose the conversion: ')
+
+  if temp_scale == 'F':
+    degC = float(input('Please enter the temperature in °C: '))
+    degF = round((degC * 9/5 + 32), 1)
+    print(f'Temperature in Celsius: {degC}°C\nTemperature in Fahrenheit: {degF}°F')
+  elif temp_scale == 'C':
+    degF = float(input('Please enter the temperature in °F: '))
+    degC = round((5/9 * (degF - 32)), 1)
+    print(f'Temperature in Farenheit: {degF}°F\nTemperature in Celsius: {degC}°C')
+  else:
+    print('Invalid conversion character!')
+
+except Exception as e:
+  print(f'Wrong input! The exception is {e}') 
