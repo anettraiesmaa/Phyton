@@ -17,3 +17,16 @@ print('Every second item: ', flowers[::2])
 my_list = ['one', 'two', 'three', 4, 5]
 print(my_list[-2])
 my_list + ['new item'] #adding new item
+
+
+#replacing items in list
+my_list[1] = 2
+print(my_list)
+
+#adding items at the end of the list
+my_list.append('append me')
+print(my_list)
+
+#remove item from list
+my_list.pop(3)
+print(my_list)
