@@ -1,0 +1,16 @@
+my_list2 = [10, 20, 30, 40, 50]
+print(my_list2)
+print(len(my_list2))
+print('First entry is: ', my_list2[0])
+print('Last entry is: ', my_list2[-1])
+
+my_list2.append(60)
+print(my_list2)
+
+my_list2.pop(1)
+print(my_list2)
+
+if 30 in my_list2:
+  print('30 is in the list')
+else:
+  print('30 is not in the list')
