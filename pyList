@@ -1,0 +1,19 @@
+flowers = ["pink primrose", "hard-leaved pocket orchid", "canterbury bells", "sweet pea", "english marigold", "tiger lily", "moon orchid", "bird of paradise", "monkshood", "globe thistle"]
+print(type(flowers))
+
+#how many items in list
+
+print(len(flowers))
+
+#phyton starts countin at 0
+#we can access items from list using []
+
+print('First entry: ', flowers[0])
+print('Last entry is: ', [-1])
+print(flowers[1:5])
+print(flowers[:5])
+print('Every second item: ', flowers[::2])
+
+my_list = ['one', 'two', 'three', 4, 5]
+print(my_list[-2])
+my_list + ['new item'] #adding new item
