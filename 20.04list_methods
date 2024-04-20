@@ -1,0 +1,41 @@
+#append
+items = ['apple', 'kiwi', 'orange']
+print(f'items')
+
+#add at the end of list
+my_value = 'banana'
+items.append(my_value)
+print(f'changed items {items}')
+
+# copy
+original_list = [1, 2, 3, 4, 5]
+copied_list = original_list.copy
+print(original_list)
+print(copied_list)
+
+# COUNT
+numbers = [1,2,7,6,5,5]
+
+target_number =5
+count = numbers.count(target_number)
+print(f'The number {target_number} appears {count} times in the list')
+
+#index
+fruits = ['apple', 'banana', 'orange']
+fruits_index = fruits.index('banana')
+print(f'index of "banana" is: {fruits_index}')
+
+#insert a element in specific place in list
+numbers = [1, 2, 3, 4, 5]
+numbers.insert(2, 10)  #second place insert 10
+print(numbers)
+
+#pop (remove specific item in list, with remove method you remove the first item)
+numbers.pop(2)
+print(numbers)
+
+#sort (sort elements in asending order)
+numbers_2 = [2, 6, 5, 8, 1, 6]
+numbers_2.sort()
+print(numbers_2)
+
