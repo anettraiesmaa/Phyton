@@ -1,0 +1,10 @@
+insert_number = input("Please enter a number")
+conv_insert_number = int(insert_number)
+list_of_numbers = [2, 4, 5, 6, 3, 6, 7]
+if conv_insert_number in list_of_numbers:
+  if conv_insert_number % 2 == 0:
+    print("your even number is in the list")
+  else:
+      print("Your odd number is in the list")
+else:
+  print("inserted number is not in the list")
