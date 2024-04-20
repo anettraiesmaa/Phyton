@@ -1,0 +1,7 @@
+fruit_input = input("Enter a fruit to check if it is on a list:")
+list_of_fruits = ["apple", "orange", "banana", "grape", "kiwi"]
+
+if fruit_input in list_of_fruits:
+  print("fruit is in the list")
+else:
+  print("fruit is not in the list")
