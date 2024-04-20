@@ -1,0 +1,31 @@
+five_elements = [3, 5, 6, 9, 10]
+
+max_value = max(five_elements)
+print("Max value:", max_value)
+
+min_value = min(five_elements)
+print("Min value:", min_value)
+
+average_value = sum(five_elements) / len(five_elements)
+print("Average value:", average_value)
+
+if 3 > average_value:
+    print("3 is higher than the average value.")
+else:
+    print("3 is not higher than the average value.")
+
+five_elements.sort()
+print("Sorted list:", five_elements)
+
+five_elements.remove(3)
+print("List after removing 3:", five_elements)
+
+name = 'Anett'
+five_elements.append(name)
+print("List after appending 'Anett':", five_elements)
+
+
+
+name = 'Anett'
+index = five_elements.index(name)
+print(f"The name '{name}' is found at index {index}.")
