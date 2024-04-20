@@ -1,0 +1,16 @@
+import random
+ 
+rand_list=[]
+n = 10 
+for i in range(n): 
+    rand_list.append(random.randint(1,100))
+
+print(rand_list)
+
+for number in rand_list:
+    if number > 5:
+        print(f'{number} is higher than 5')
+    elif number < 5:
+        print(f'{number} is lower than 5')
+    else:
+        print(f'{number} is equal to 5')
