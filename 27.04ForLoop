@@ -1,0 +1,39 @@
+for letter in "I love Phyton":   #String iterable object, print out in coulumn
+  print(letter, end = ' ') #\n new line character, print out in row
+
+  #for loop list
+cities_i_have_been_to = ['Tallin', 'Riga', 'Tartu', 'Aluksne', 'Viru', 'Ventspils']
+for city in cities_i_have_been_to:
+    print(f'I have been to ' + city)
+
+counter = 1 #initialize the counter
+
+for city in cities_i_have_been_to:
+  print(f'{counter}. I have been to {city}')
+  counter = counter + 1
+
+# ADD PREVIOUS CITY IN THE FORLOOP
+cities_i_have_been_to = ['Tallin', 'Riga', 'Tartu', 'Aluksne', 'Viru', 'Ventspils']
+counter = 0 #INITIALIZE THE COUNTER
+previous_city = None
+
+for city in cities_i_have_been_to:
+  counter = counter + 1
+  if previous_city == None:
+    print(f'{counter}. I have been to {city}. ')
+  else:
+    print(f'{counter}. I have been to {city}. The previous city I visited was {previous_city}.')
+  previous_city = city
+
+  range(len(cities_i_have_been_to)) #elements  [0, 1, 2, 3, 4, 5]
+for i in range(len(cities_i_have_been_to)):
+  print(cities_i_have_been_to[i])
+  print(which_year_I_visited[i])
+  print(f'This is the index {i}')
+
+  cities_i_have_been_to = ['Tallin', 'Riga', 'Tartu', 'Aluksne', 'Viru', 'Ventspils']
+which_year_I_visited = [2020, 2024, 2020, 2021, 2024, 2022]
+range(len(cities_i_have_been_to)) #elements  [0, 1, 2, 3, 4, 5]
+for i in range(len(cities_i_have_been_to)):
+  print(f'I have been to {cities_i_have_been_to[i]}. I visited that city in {which_year_I_visited[i]}')
+  
