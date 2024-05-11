@@ -1,0 +1,24 @@
+while True:
+  city = input('What cities have you been to in LV or EE To stop write "stop"')
+  
+  if city == 'stop':
+    print('You have written "stop"')
+    break
+  else:
+    print(f'You have been in these cities: {city}')
+
+
+#Initiate a list, append each city to the list, print how many cities user has been to.
+
+cities = []
+while True:
+  city = input('What cities have you been to in LV or EE To stop write "stop"')
+  
+  if city == 'stop':
+    print('You have written "stop"')
+    break
+  else:
+    print(f'You have been in these cities: {cities}')
+    cities.append(city)
+
+print(f'You have been to {len(cities)} cities')
