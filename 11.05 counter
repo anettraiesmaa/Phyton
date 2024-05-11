@@ -1,0 +1,28 @@
+counter = 0 # initialize the variable
+while counter < 10: #we break when we reach the logical expression to be false
+    counter = counter + 1
+    print (counter)
+
+counter = 0 #initialize the variable
+while True: #will run til we break
+  counter = counter + 1
+  print(counter)
+  break
+
+counter = 0 #initialize the variable
+while counter < 10: #will run til we break
+  counter = counter + 1
+  print(counter)
+  if counter < 10:
+    continue
+  else:
+    break
+
+counter = 0 #initialize the variable
+while True: #will run til we break
+  counter = counter + 1
+  print(counter)
+  if counter < 10:
+    continue #goes up to the loop
+  else:
+    break #we stop the loop
