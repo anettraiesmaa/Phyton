@@ -1,0 +1,20 @@
+import random
+random_number = random.randint(1, 101)
+print(random_number)
+
+while True:
+  guess = input('Guess the number between 1 and 100, to quite write "stop"!')
+
+  if guess == 'stop':
+    print('The game has been stopped.')
+    break
+  guess = int(guess)
+
+  if guess == random_number:
+    print('Congratulations. You have guessed the correct number.')
+    break
+  else:
+    if guess > random_number:
+      print('Your guess is too high')
+    else:
+      print('Your guess is too low')
