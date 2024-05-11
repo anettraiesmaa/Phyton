@@ -1,0 +1,35 @@
+import random
+
+print('Welcome to the coin toss game!')
+
+correct_guesses = 0
+total_guesses = 0
+
+while True:
+    guess = input('Guess the outcome of the coin toss (0 for heads, 1 for tails), or type "quit" to stop: ')
+
+    if guess == 'quit':
+        print('The game has been stopped.')
+        break
+    
+    try:
+        guess = int(guess)
+    except ValueError:
+        print('Please enter a valid number (0 for heads, 1 for tails)!')
+        continue
+    
+    if guess not in [0, 1]:
+        print('Please enter a valid number (0 for heads, 1 for tails)!')
+        continue
+    
+    toss = random.randint(0, 1)
+    
+    if guess == toss:
+        print('Congratulations! You win!')
+        correct_guesses += 1
+    else:
+        print('Sorry! You lost!')
+    
+    total_guesses += 1
+
+print(f'You made {total_guesses} guesses in total, with {correct_guesses} correct guesses.')
