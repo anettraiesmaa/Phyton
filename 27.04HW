@@ -1,0 +1,15 @@
+#Write a program with for loop and list where user needs to input a STRING value, and program needs to check if the value is in the list.
+#Use string methods to standardize the user input.
+insert_name = input("Please enter your name to check if you are in the party list: ")
+list_of_names = ['Emma', 'Anna','Liza', 'Hugo', 'Rasmus']
+
+name_in_list = False
+
+for check_name in list_of_names:
+  if check_name == insert_name:
+    name_in_list = True
+    print(f'{insert_name} you are invited into party!')
+    break
+if not name_in_list:
+    print(f'{insert_name} you are not invited to the party')
+
