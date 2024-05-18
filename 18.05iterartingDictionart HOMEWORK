@@ -1,0 +1,33 @@
+shop_inventory = {}
+
+while True:
+    item = input("Please enter inventory item, to exit write STOP : ")
+    if item == "STOP":
+        print("That's all!")
+        break
+    amount = int(input("Please enter how many we have of this item: "))
+    shop_inventory[item] = amount 
+    print(f'Item {item} has been added successfully!')
+
+print(f'Your inventory is: {shop_inventory}')
+
+while True:
+    user_enters = input('Enter "items" to see all items, "amounts" to see quantities, "pairs" to see items and quantities, "sums" to see the total, or "stop" to exit: ')
+    
+    if user_enters == "stop":
+        print("You have ended the inventory overview!")
+        break
+    elif user_enters == "items":
+        for key in shop_inventory:
+            print(f'Key: {key}')
+    elif user_enters == "amounts":
+        for value in shop_inventory.values():
+            print(f'Value: {value}')
+    elif user_enters == "pairs":
+        for key, value in shop_inventory.items():
+            print(f'Key: {key}, Value: {value}')
+    elif user_enters == "sums":
+        sums = sum(shop_inventory.values())
+        print(f'Total number of items: {sums}')
+    else:
+        print("Invalid input, please try again.")
