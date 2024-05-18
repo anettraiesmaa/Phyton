@@ -1,0 +1,28 @@
+#1. Welcome the user to the bank
+print("Hello to the Phyton Bank!")
+#2. Initiate balance = 0
+balance = 0
+#3. Ask the user to input the amount of money they want to deposit.
+user_deposit = int(input("Enter the amount you want to deposit!"))
+#4. Add the deposit amount to the total balance
+balance = balance + user_deposit
+print(f'Your current balance is {total_balance}.')
+#5. Ask the user if they want to make another deposit or exit the bank. 
+#6. If they choose to make another deposit, repeat the process (while True).
+#7. If not, print the total amount deposited and exit the bank.
+while True:
+    user_choice = int(input('Enter 1 to make another deposit, enter 2 to exit and see account total balance: '))
+   
+    if user_choice == 2:
+        # 7. If not, print the total amount deposited and exit the bank.
+        print(f'Your final balance is {balance}.')
+        break
+    elif user_choice == 1:
+        # 6. If they choose to make another deposit, repeat the process.
+        user_deposit = int(input("Enter the amount you want to deposit: "))
+        balance = user_deposit + balance
+        print(f'Your current balance is {balance}.')
+    else:
+        # Handle incorrect input
+        print("Invalid input! Please enter 1 or 2.")
+  
