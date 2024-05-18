@@ -1,0 +1,17 @@
+#Functions
+
+inventory = {}
+
+def add_items(inventory, item):
+    amount = input("Please enter how many we have of this item: ")
+    inventory[item] = amount  # adding element to the dictionary
+    print(f'Item {item} has been added successfully!')
+
+while True:
+    item = input("Please enter inventory item, to exit write STOP: ")
+    if item.upper() == "STOP":
+        print("That's all!")
+        break
+    add_items(inventory, item)
+    
+print(f'Your inventory is: {inventory}')
