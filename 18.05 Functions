@@ -1,0 +1,12 @@
+inventory = {}
+def add_item(inventory):
+  store_item = input("Enter the item name: ")
+  item_quantity = input("Enter the quantity for the item: ")
+  inventory[store_item] = item_quantity
+  print(f"Item {store_item} quantity updated!")
+while True:
+  exit = input('If you want to exit write STOP, else nothing')
+  if exit == 'STOP':
+    print("You've stopped entries for today. See you next time!")
+    break
+  add_item(inventory)
