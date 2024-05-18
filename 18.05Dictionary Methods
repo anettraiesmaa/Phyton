@@ -1,0 +1,29 @@
+#DICTIONARY METHODS
+my_friend = {'Allis': '30', 'Johan': '40', 'Linda': '28'} #key:value
+my_friend['Linda']
+
+#update() add new dict to the dictionary
+incoming_friend = {'Arta':28}
+my_friend.update(incoming_friend)
+my_friend
+
+#pop- removing a element
+my_friend.pop('Allis')
+my_friend
+
+#get() - 
+
+my_friend.get('Johan')
+my_friend.get('Allis', 'This person does not exict int the dictionary') #removed with pop method
+txt = 'Does not exist'
+dict1.get(7, txt) #you can  give a variable for the fallback (if its not in the dictionary)
+
+#items(), keys(), values()
+#items() - return all the object from the dict
+my_friend.items()
+
+#keys() return only keys
+my_friend.keys()
+
+#values() return all the values
+my_friend.values()
