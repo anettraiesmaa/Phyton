@@ -1,0 +1,22 @@
+##Dictionary
+dictionary = {} #curly braces method
+anonther_dictionary = dict() #dict method
+
+#key value pairs
+
+dictionary = {}
+dictionary['key1'] = 'value1'
+
+dictionary ## access dicrionary
+OUTPUT: {'key1': 'value1'}
+
+dictionary['key2'] #through key we can access value
+OUTPUT 'value2'
+
+dictionary['datorium_list'] = {'Phyton', 'Java', 'C#'}
+dictionary
+OUTPUT: {'key2': 'value2', 'datorium_list': {'C#', 'Java', 'Phyton'}}
+
+dictionary['datorium_list'] = {1,2,3} #if you use same key second time it will overwrite old value
+dictionary
+OUTPUT: {'key2': 'value2', 'datorium_list': {1, 2, 3}}
