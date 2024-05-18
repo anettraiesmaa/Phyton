@@ -1,0 +1,15 @@
+contact_book = {} #empty dictionary where store user input
+
+while True:
+  name = input('Enter the name: ')
+  if name == "stop":
+    print('You have stopped')
+    break
+  number = input('Enter the number: ') #value
+  contact_book[name] = number #adding the element number and name to the dictionary, name- key, number-value
+  print(f'Contact {name} added successfully!')
+print(contact_book)
+
+
+new_dict = {name:number}
+contact_book.update(new_dict)  it can be done with update too
