@@ -1,0 +1,12 @@
+inventory = {}
+
+while True:
+    item = input("Please enter inventory item, to exit write STOP : ")
+    if item == "STOP":
+        print("That's all!")
+        break
+    amount = input("Please enter how many we have of this item: ")
+    inventory[item] = amount  # adding element to the dictionary
+    print(f'Item {item} has been added successfully!')
+
+print(f'Your inventory is: {inventory}')
