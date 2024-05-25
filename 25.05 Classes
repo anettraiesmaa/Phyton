@@ -1,0 +1,26 @@
+def cleaner(item, fluid, times):   #item-parameter
+  print(f'I have clened this {item} with {fluid} {times} times.')
+cleaner('phone', 'desinfection', 3)   #text stored in item
+
+
+def add_two_numbers(number_1, number_2):
+  return number_1 + number_2
+result = add_two_numbers(4, 5)
+print(result)
+
+
+class Cat:
+  #__init__ method rund automatically
+  #it like templet to make diffrenet cats
+  #when an object from this class is created
+  #this method also called a 'constructor'
+  def __init__(self, name, age): #self is required parameter and refers to the instance
+    self.name = name
+    self.age = age
+
+cat1 = Cat('Coder', 3)
+cat2 = Cat('Minka', 12)
+cat3 = Cat('Miisu', 5)
+
+print(cat1.age)
+print(cat3. name)
