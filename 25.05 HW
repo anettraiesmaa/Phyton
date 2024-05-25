@@ -1,0 +1,26 @@
+class Shop:
+  def __init__(self):
+    self.items = {}  # Initialize an empty dictionary to store items and their prices
+    
+  def add_inventory(self, item, price):
+    self.items[item] = price  # Add the item and its price to the items dictionary 
+    
+  def print_items(self):  # Iterate over the items dictionary and print each item and its price
+    print(f'Your shop has these products:')
+    for item, price in self.items.items():
+      print(f'Item: {item}, price: {price}')
+
+  def set_price(self, item, new_price):
+        if item in self.items:
+          self.items[item] = new_price
+
+shop = Shop()  # Create an instance of Shop
+
+shop.add_inventory('Kiwi', 2.50)
+shop.add_inventory('Orange', 3.5)
+
+shop.print_items() # Print the items dictionary
+
+shop.set_price('Orange', 2) # Override price
+
+shop.print_items() #print with the new price
