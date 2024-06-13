@@ -1,0 +1,85 @@
+#Develop a simple prototype for an online shop
+#1. Define classes Client, Items, Transaction
+#2. Write the logic so that each client can purchase one of several items in a single transaction
+#3. Make a printout of data with nested loops
+#4. The program should print out:
+#- all clients
+#- all transactions of a client
+#- all items purchased in each transaction of the client
+
+class Client:
+  number_of_clients = 0
+
+  def __init__(self, name):
+    self.name = name
+    self.transactions = []
+    Client.number_of_clients += 1
+
+  def add_transaction(self, transaction):
+    self.transactions.append(transaction)
+        
+
+class Item:
+
+  def __init__(self, product):
+    self.product = product
+
+class Transaction:
+  def __init__(self):
+    self.items = []
+
+  def add_item(self, item):
+    self.items.append(item)
+
+
+# adding clients to a list
+clients = []
+clients.append(Client('Anna'))
+clients.append(Client('Oskar'))
+clients.append(Client('Jenifer'))
+
+# adding products to a list
+products = []
+products.append(Item('Apple'))
+products.append(Item('Kiwi'))
+products.append(Item('Orange'))
+products.append(Item('Watermelon'))
+products.append(Item('Potato'))
+products.append(Item('Berry'))
+
+#making purchases
+transaction1 = Transaction()
+transaction1.add_item(products[0])  
+transaction1.add_item(products[2])  
+clients[0].add_transaction(transaction1)
+
+transaction2 = Transaction()
+transaction2.add_item(products[1])  
+transaction2.add_item(products[5])  
+clients[0].add_transaction(transaction2)
+
+transaction3 = Transaction()
+transaction3.add_item(products[3])  
+transaction3.add_item(products[4])  
+transaction3.add_item(products[5])  
+clients[1].add_transaction(transaction3)
+
+transaction4 = Transaction()
+transaction4.add_item(products[2])  
+transaction4.add_item(products[5])  
+transaction4.add_item(products[1])  
+clients[2].add_transaction(transaction4)
+
+
+# print out all clients:
+client_names = [client.name for client in clients]
+print(f'We have {Client.number_of_clients} clients in our shop. Their names are {client_names[0]}, {client_names[1]}, {client_names[2]}.')
+
+#print out all transactions of a client
+#print out all items purchased in each transaction of the client
+for client in clients:
+    print(f'Client {client.name} has done these transactions:')
+    for transaction in client.transactions:
+        print(f'He/She purchesed these items:')
+        for item in transaction.items:
+            print(f'{item.product}')
