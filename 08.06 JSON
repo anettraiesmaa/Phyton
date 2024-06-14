@@ -1,0 +1,42 @@
+#json- Java Script Object Notation- Both JSON and XML can be used to receive data from a web server.
+#visual studio code good place to write
+#you have to start with curly braces
+#you can create list of accounts
+#list for clients
+{
+    "clients": [
+        {
+            "id": "123456",
+            "name": "Anna",
+            "accounts": [
+              {
+                "number": "EE573784623652",
+                "currency": "EUR",
+                "balance": 1000.00
+              },
+              {
+                "number": "JP573765555652",
+                "currency": "JPY",
+                "balance": 25000.00
+              },
+              {
+                "number": "US655567778888",
+                "currency": "USD",
+                "balance": 0
+              }
+            ]
+          },
+          {
+            "id": "987654",
+            "name": "Oskar",
+            "accounts": [
+              {
+                "number": "PL849512635445",
+                "currency": "PLN",
+                "balance": 47800.00
+              }
+            ]
+          },
+        {}
+    ]
+}
