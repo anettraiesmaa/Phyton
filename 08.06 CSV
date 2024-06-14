@@ -1,0 +1,9 @@
+#CSV- Comma Seperated Values, save in .txt fail and open with excel
+#id, name, accounts
+#123456789, Anna, "[6363747, 7373838, 7373838]"
+#535363737, Oskar, "[637373]"
+#637373838, Jennifer, "[7438484]"
+
+#id, anme, surename, salary
+#12345, Anna, Johnson, 8890
+#3445334, Oskar, Smith, 2000
