@@ -1,4 +1,4 @@
-#CSV- Comma Seperated Values, save in .txt fail and open with excel
+#CSV- Comma Seperated Values, save in .txt fail and open with excel, use for data storage
 #id, name, accounts
 #123456789, Anna, "[6363747, 7373838, 7373838]"
 #535363737, Oskar, "[637373]"
