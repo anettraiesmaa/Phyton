@@ -6,3 +6,23 @@ with open('clients_data.json') as json_file:
   data = json.load(json_file)
 
 print(data)
+
+#reading JSON into a dictionary
+import json
+
+#opening JSON file
+with open('clients_data.json') as json_file:
+  data = json.load(json_file)
+
+for client in data:
+  print(client["name"])
+
+#reading JSON into a dictionary
+import json
+
+#opening JSON file
+with open('clients_data.json') as json_file:
+  data = json.load(json_file)
+
+for client in data:
+  print(f'{client["name"]} ({client["id"]})')
