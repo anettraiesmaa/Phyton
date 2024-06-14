@@ -40,3 +40,6 @@
         {}
     ]
 }
+
+#stripe API, spotify API
+#with JSON apps change information between UI/frontend and backend
