@@ -1,0 +1,8 @@
+#reading JSON into a dictionary
+import json
+
+#opening JSON file
+with open('clients_data.json') as json_file:
+  data = json.load(json_file)
+
+print(data)
