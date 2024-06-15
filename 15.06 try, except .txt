@@ -1,0 +1,17 @@
+#birth.txt, in fail copy path and paste it insteed birth.txt
+
+#readlines
+
+#Modify the code, make filename as input from the user
+#and enclose the code in try, except if file is not found
+filename = input("Please input the file name")
+
+try:
+  with open(filename, 'r') as file:
+    content = file.readlines()
+
+  print("Standart file input/output")
+  print(content)
+
+except:
+  print("This filename does not excist")
