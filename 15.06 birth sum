@@ -1,0 +1,8 @@
+with open('/content/2024_06_14_births.txt', 'r') as file:
+    births = file.readlines()
+
+birth_sum = 0
+for birthline in births:
+  birth_sum = birth_sum + int(birthline[4:])
+
+print(birth_sum)
