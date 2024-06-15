@@ -1,0 +1,9 @@
+#birth.txt, in fail copy path and paste it insteed birth.txt
+filename = '/content/2024_06_14_births.txt' #location
+with open(filename, 'r') as file:
+  content = file.read()
+print('Standard File I/O')
+print(content)
+
+for line in content:
+  print(line)
