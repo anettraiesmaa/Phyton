@@ -1,0 +1,13 @@
+import pandas as pd
+deaths = pd.read_csv('/content/2024_06_14_deaths.txt', header=None, delimiter = ' ') #you can read in many different file types
+deaths_column_names = ['Month', 'Nr.Births']
+deaths.columns = birth_column_names
+deaths
+
+
+#pandas
+import pandas as pd #anything esle could also work
+births = pd.read_csv('/content/2024_06_14_births.txt', header=None, delimiter = ' ') #you can read in many different file types
+birth_column_names = ['Month', 'Nr.Births']
+births.columns = birth_column_names
+births
