@@ -1,0 +1,18 @@
+#List:
+
+#Ordered collection of items.
+#Access items by index (position).
+#Defined with square brackets [].
+
+#Dictionary:
+
+#Unordered collection of key-value pairs.
+#Access items by key.
+#Defined with curly braces {}. 
+
+
+with open('/content/2024_06_14_births.txt', 'r') as file:
+    births = file.readlines()
+
+for birthline in births:
+    print(birthline[4:]) #index[4:] from index 4 till the end
