@@ -1,0 +1,25 @@
+#The file births.txt contains the number of births in Estonia for a
+#certain time period by months, while the file deaths.txt contains the
+#number of deaths.
+#Write a program that finds and outputs the months when the natural
+#population growth was positive and its size.
+#Update your program so that it also finds and outputs the natural
+#population growth for the entire period covered in the files.
+
+with open('/content/2024_06_14_births.txt', 'r') as file:
+    births = file.readlines() #list seperated by coma
+
+with open('/content/2024_06_14_deaths.txt', 'r') as file:
+    deaths = file.readlines()
+
+for i in range(len(births)):
+  birthline = births[i]
+  deathline = deaths[i]
+
+  birthnumber = int(birthline[4:])
+  deathnumber = int(deathline[4:])
+
+  growth = birthnumber- deathnumber
+  month = birthline[:3]
+  if growth > 0:
+    print(month, growth)
