@@ -1,0 +1,24 @@
+filename = '/content/prices.txt'
+with open(filename, 'r') as file:
+  content = file.read()
+print(content)
+
+def is_number(value):
+  try:
+    float(value)
+    return True
+  except ValueError:
+    return False
+
+total_price = 0.0
+item_count = 0
+
+with open(filename, 'r') as file:
+  for line in file:
+    line = line.strip()
+    if is_number(line):
+      total_price += float(line)
+      item_count += 1
+
+print(f'Total price: {total_price}')
+print(f'Total number of purchased items: {item_count}')
