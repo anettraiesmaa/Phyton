@@ -43,4 +43,8 @@ df.notna().all() #checking if all the values are filled
 
 df.dropna() #drops empty values, but do not override(dont delete empty rows)
 df.dropna(inplace=True) #deleted empty rows
+
+df_new_dataframe = df.dropna() #save it the new dw
+df.dropna(inplace=True) #specify that you want to override excisting data
+
 df.to_csv('cleaned_data.csv') #saves cleaned file
