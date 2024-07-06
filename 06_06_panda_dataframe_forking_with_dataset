@@ -1,0 +1,46 @@
+#read in csv file
+df = pd.read_csv('/content/transaction_dataset.csv')
+df.head() #first 5 rows of dataframe
+
+df.tail() #last 5 rows of dataframe
+
+df.head(n=10) #deafault value 5, you can define yourself how many rows
+
+df.shape #how many rows, columns in dataset
+
+df.sample(5) #random 5 rows
+
+df.info() #gives information about columns, column names, data types, how many values etc.
+
+df.describe() #statistics of dataset (int, float columns)
+
+df.describe(include='object') #includes statistics of non integars
+
+#how we select 1 column in dataframe?
+df['Gender']
+df['Gender'].unique()
+
+df['Gender'] #we access column by name, we can access several columns
+df.Gender #we access the same column
+
+df['Merchant Name']
+df.Merchant Name #accessing column with atribute
+
+df['Gender']
+df.Gender
+df.iloc[:, 3] #accessing column with index
+
+#value counts
+df['Gender'].value_counts() #column name and value counts
+df['Gender'].value_counts(dropna=False) #dropna- dont drop non numberical values
+
+df.isna() #ginary False=0, True=0
+df.isna().sum() #how many emty values in data set
+
+
+df.notna().sum() #how many not emty vaues in data set
+df.notna().all() #checking if all the values are filled
+
+df.dropna() #drops empty values, but do not override(dont delete empty rows)
+df.dropna(inplace=True) #deleted empty rows
+df.to_csv('cleaned_data.csv') #saves cleaned file
