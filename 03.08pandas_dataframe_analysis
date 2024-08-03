@@ -1,0 +1,114 @@
+import pandas as pd #analysis
+import matplotlib.pyplot as plt #vizualization
+
+pokemon_df = pd.read_csv('/content/Pokemon.csv')
+pokemon_df.head(n=10) #top 10 rows
+
+pokemon_df.sample(5) #random 5
+
+rows, columns = pokemon_df.shape
+print(f'Number of rows is {rows}, number of columns is {columns}')
+
+unique_names = pokemon_df['Name'].nunique()
+unique_names#how many pokemons have both?
+
+pokemon_df.head(2) #first 2 rows
+
+#how many pokemons have attack greater than 100?
+attack_greater_than_100 = pokemon_df[pokemon_df['Attack'] > 100]
+print(len(attack_greater_than_100))
+
+defense_greater_than_100 = pokemon_df[pokemon_df['Defense']> 100]
+print(len(defense_greater_than_100))
+
+
+attack_defense_greater_than_100 = pokemon_df[(pokemon_df['Attack'] > 100) & (pokemon_df['Defense'] > 100)]
+print(len(attack_defense_greater_than_100))
+
+#VALUE COUNTS!!! Create a grouped DataFrame that counts the number of Pokemons in each group for Type 1.
+type1_pokemons = pokemon_df['Type 1'].value_counts().reset_index() #reset_index()
+type1_pokemons #without print method vizualization better for analyziz
+
+type1_pokemons.plot(x = 'Type 1', y = 'count', kind = 'bar', color = 'white', edgecolor = 'black')
+plt.title('Pokemons count by type 1')
+plt.xlabel('Type 1')
+plt.ylabel('Count of Pokemons')
+
+plt.bar(type1_pokemons['Type 1'], type1_pokemons['count'], color=['thistle','skyblue'], edgecolor='maroon')
+plt.xticks(rotation=90)
+
+#which pokemon has the highest attack?
+max_attack = pokemon_df['Attack'].max() #the highesr value of attack
+print(max_attack)
+index_max_attack = pokemon_df['Attack'].idxmax() #index og highest values
+print(index_max_attack)
+highest_attack = pokemon_df['Name'].iloc[pokemon_df['Attack'].idxmax()]
+print('Pockemon with the highest attack is:',highest_attack)
+
+#which pokemon has the lowest attack?
+min_attack = pokemon_df['Attack'].min() #the highesr value of attack
+print(min_attack)
+index_min_attack = pokemon_df['Attack'].idxmin() #index og highest values
+print(index_min_attack)
+lowest_attack = pokemon_df['Name'].iloc[pokemon_df['Attack'].idxmin()]
+print('Pockemon with the highest attack is:',lowest_attack)
+
+#adding a column
+pokemon_df['My unique column'] = 'Pokemon'
+pokemon_df
+
+#adding calculated column
+pokemon_df['Attack_Defence'] = pokemon_df['Attack'] + pokemon_df['Defense']
+pokemon_df
+
+#quick math calculation
+pokemon_df['Attack'].sum()
+pokemon_df['Attack'].min()
+pokemon_df['Attack'].max()
+pokemon_df['Attack'].mean() #the average
+
+pokemon_df['Attack'] > pokemon_df['Attack'].mean()
+pokemon_df['Attack above Avrage'] = pokemon_df['Attack'] > pokemon_df['Attack'].mean()
+pokemon_df
+
+
+pokemon_df.insert(9, 'Attack_Defense', pokemon_df.pop('Attack_Defense'))
+pokemon_df
+
+pokemon_df.shape
+pokemon_df = pokemon_df.drop(columns=['My unique column'])
+pokemon_df.shape
+
+#histogram
+#analyze total for each pokemon
+plt.hist(pokemon_df['Total'], color = 'green', edgecolor = 'black', alpha = 0.7) #aplha = trancparacy, default = 10bins
+plt.xlabel('Total')
+plt.ylabel('Number of pokemons (Frequency)')
+#avrage line
+plt.axvline(pokemon_df['Total'].mean(), linestyle = 'dashdot', color = 'red')
+#minimum line
+plt.axvline(pokemon_df['Total'].min(), linestyle = 'dashdot', color = 'pink')
+#maximum line
+plt.axvline(pokemon_df['Total'].max(), linestyle = 'dashdot', color = 'blue')
+plt.grid(axis='x', linestyle='--', alpha=0.7)
+
+
+value = plt.hist(pokemon_df['Total'], bins = 3, color='green', edgecolor='black', alpha=0.7)
+
+hist_values = value[0]
+bin_edges = value[1]
+
+print('Histogram counts:', hist_values)
+print('Bin edges', bin_edges) #the end value is not included
+
+
+#value_count how can we calculate the same histogram with value counts
+pokemon_df['Total'].value_counts(bins=[170, 379, 579, 781])
+
+
+(pokemon_df['Total'] > 579).sum()
+
+
+pokemon_df.hist(column='Total', by='Legendary', bins=3, edgecolor='black')
+
+
