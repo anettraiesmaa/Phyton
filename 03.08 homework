@@ -1,0 +1,23 @@
+#How many Pokémons are with 'Type 1' == Water as a % of total?
+Type_1_counts = pokemon_df['Type 1'].value_counts()
+print(Type_1_counts['Water']) #here I print out for checking the result, can be skipped
+water_in_Type_1 = round((Type_1_counts['Water'])/(Type_1_counts.sum())*100,3) # I get here the result, that I multiply by 100 to get to %
+print(f"Water in Type 1 are {water_in_Type_1}% of Pokemons") #but % are added as symbol
+
+#What is the maximum 'Speed' value? What is the minimum 'Speed' value? What is the difference between max and min 'Speed'?
+min_speed = pokemon_df['Speed'].min()
+print(min_speed)
+max_speed = pokemon_df['Speed'].max()
+print(max_speed)
+print(f'Difference between max and min speed value is {pokemon_df["Speed"].max()-pokemon_df["Speed"].min()}.')
+
+#Filter the DataFrame to include only the Pokémon with 'Speed' >= 80. How many Pokémon meet this criterion? Display this DataFrame 
+#using your preferred visualization method.
+speed_greater_than_80 = pokemon_df[pokemon_df['Speed'] >= 80]
+print(len(speed_greater_than_80))
+
+speed_greater_than_80 = pokemon_df['Speed'].value_counts().reset_index() #reset_index()
+speed_greater_than_80 #without print method vizualization better for analyziz
+
+pokemon_df['Name'].str.len().idxmax()
+pokemon_df['Name'].iloc[pokemon_df['Name'].str.len().idxmax()]
