@@ -1,0 +1,62 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+pokemon_df = pd.read_csv('/content/Pokemon.csv')
+
+pokemon_df.head(n=5)
+
+#create a histogram a colym 'speeed'
+plt.hist(pokemon_df['Speed'], color = 'green', edgecolor = 'black', alpha = 0.7)
+plt.xlabel('Total')
+plt.xlabel('Frequency')
+plt.axvline(pokemon_df['Speed'].mean(), linestyle = 'dashdot', color = 'red')
+plt.axvline(pokemon_df['Speed'].min(), linestyle = 'dashdot', color = 'pink')
+plt.axvline(pokemon_df['Speed'].max(), linestyle = 'dashdot', color = 'blue')
+
+#Correlation
+#scatter plot between variables attack and defence
+plt.scatter(pokemon_df['Attack'], pokemon_df['Defense'], color='blue', alpha=0.5)
+plt.xlabel('Attack')
+plt.ylabel('Defense')
+
+#pearson correlation between attack and defense
+correlation1 = pokemon_df['Attack'].corr(pokemon_df['Defense'])
+correlation1
+
+#scatter plot between speed and defence
+plt.scatter(pokemon_df['Speed'], pokemon_df['Defense'], color='blue', alpha=0.5)
+plt.xlabel('Speed')
+plt.ylabel('Defense')
+
+correlation2 = pokemon_df['Speed'].corr(pokemon_df['Defense'])
+correlation2
+
+plt.scatter(pokemon_df['HP'], pokemon_df['Defense'], color='purple', alpha=0.5)
+plt.xlabel('HP')
+plt.ylabel('Defense')
+
+#result of this correlaction calculation is between -1 and 1
+#-1 means perfect negative correlation
+#1 means perfect positive relationship
+
+# Select only numeric columns
+
+numeric_columns = pokemon_df.select_dtypes(include=['number'])
+numeric_columns = numeric_columns.drop('#', axis=1)
+numeric_columns
+target_column = 'Attack'
+correlation_results = {} #key = column, val=pearson_correlation
+
+# for loop comparing target column and all other columns in the DataFrame
+
+for col in numeric_columns.columns:
+  if col =='Attack':
+    continue
+  correlation = pokemon_df[target_column].corr(pokemon_df[col])
+  correlation_results[col] = correlation
+
+correlation_results
+
+#correlation matrix
+correlation_matrix = numeric_columns.corr() #all columns are numeric
+correlation_matrix
