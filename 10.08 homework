@@ -1,0 +1,23 @@
+#1. Create two DataFrame Grass and Water
+grass_df = pokemon_df[pokemon_df['Type 1'] == 'Grass']
+water_df = pokemon_df[pokemon_df['Type 1'] == 'Water']
+
+#2. Create the regression plots for each (Grass and Water)
+sns.regplot(
+    data=grass_df, x='Speed', y="Defense",
+    ci=99, marker="x", color=".3", line_kws=dict(color="r"),
+)
+
+sns.regplot(
+    data=water_df, x='Speed', y="Defense",
+    ci=99, marker="x", color=".3", line_kws=dict(color="r"),
+)
+
+#Calculate the Pearson correlation for each DataFrame (variables: Attack and Defense)
+correlation4 = grass_df['Attack'].corr(grass_df['Defense'])
+print('Pearson correlation coefficient:', correlation4)
+
+correlation4 = water_df['Attack'].corr(water_df['Defense'])
+print('Pearson correlation coefficient:', correlation4)
+
+Explanation: both grass and water pokemons have a moderate positive correlation (grass pokemons a bit stronger) between attack and defense 
