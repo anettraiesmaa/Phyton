@@ -1,0 +1,21 @@
+import seaborn as sns
+
+sns.heatmap(correlation_matrix)
+
+sns.heatmap(correlation_matrix, annot=True) #annot- adding values
+
+plt.figure(figsize=(10, 8))#increasing figure size
+sns.heatmap(correlation_matrix, annot=True, cmap='Set2') #annot- adding values, #cmap-changing color
+plt.title('Correlation Matrix') #adding title
+
+#linear regression
+#predict one value based on the another
+sns.regplot(x = 'Attack', y = 'Defense', data = pokemon_df)
+
+sns.regplot(
+    data=pokemon_df, x='Speed', y="Defense",
+    ci=99, marker="x", color=".3", line_kws=dict(color="r"),
+)
+
+correlation2 = pokemon_df['Speed'].corr(pokemon_df['Defense'])
+print('Pearson correlation coefficient:', correlation2)
