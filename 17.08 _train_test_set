@@ -1,0 +1,75 @@
+import pandas as pd
+advertising = pd.read_csv('/content/tvmarketing.csv')
+advertising.head(5)
+
+advertising.describe() #simple math
+
+    import seaborn as sns
+    sns.regplot(
+    data=advertising,
+    x='TV',
+    y="Sales",
+    ci=99,
+    marker="x",
+    color="black",
+    line_kws=dict(color="green"))
+
+    advertising.corr()
+
+    #supervised and unsupervised training, linear regressiom
+#Supervised Learning aims to make predictions based on the training data.
+#Unsupervised Learning aims to uncover hidden patterns or structures in the data.
+
+#training linear regression model
+#https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
+
+#preapering x and y
+X = advertising.drop('Sales', axis=1) #independent variable
+X.head()
+
+
+Y = advertising.drop('TV', axis=1)
+Y.head()
+
+#split the data to train set and test set
+from sklearn.model_selection import train_test_split
+
+#x and y to train and test set, we want to kmnow how good our data predicts sales
+#training set- model training
+#test set- validation
+
+X_train, X_test, y_train, y_test = train_test_split(X, Y, train_size = 0.7) #0.7 means that 70% of the data goes to train set, 30 to test set
+X_train, X_test, y_train, y_test = train_test_split(X, Y, train_size = 0.7, random_state=42) #0.7 means that 70% of the data goes to train set, 30 to test set #added random_state
+X_train
+
+#column - also called feature
+#row - also called observation
+
+#train the model
+from sklearn.linear_model import LinearRegression
+
+model = LinearRegression() #initalize the model
+model.fit(X_train, y_train) #fit the model to data
+
+### Y=mX + b ###
+#m is slope
+print(f'Model inercept is: {model.intercept_}')
+print(f'Model cofficient is: {model.coef_}')
+
+# a prediction
+my_new_budget = [[150]] #2D array
+my_prediction_sales = model.predict(my_new_budget)
+my_prediction_sales
+print(f'When the new budget in {my_new_budget}, then predicted sales are {round(my_prediction_sales[0][0])}') #[][] get read of double bracets from print statement
+
+X_test.head()
+y_pred = model.predict(X_test)
+
+final_df = pd.DataFrame()
+final_df['TV'] = X_test
+final_df['Actual_sales'] = y_test
+final_df['Predicted_sales'] = y_pred
+final_df['ABS_Error_Actual_vs_Predicted'] = abs(final_df['Actual_sales']-final_df['Predicted_sales'])
+final_df.head()
+
+
