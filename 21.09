@@ -1,0 +1,125 @@
+import numpy as np
+#list (array) of 25 values in order
+
+my_values = np.arange(0,25)
+my_values
+
+my_values.shape
+
+my_values.reshape(5,5)
+
+my_values[2] #accessing the the 3th element of the array
+
+my_values[2:7] #accessing the arrange of values
+
+my_values[2:] #accessing elements from 3th element
+
+#selection
+#we want to select values above 15
+my_values > 20 #boolean array
+
+x=15
+my_values[my_values > x]
+
+#broadcasting- allows operations between arrays of different shape
+#allows NumPy to automatically expand tge smaller array to match the larger array
+
+scores = np.array([
+    [59, 34, 56, 23],
+    [56, 28, 96, 25],
+    [73, 64, 25, 64]
+])
+
+scores.shape
+
+bonuses = np.array([5, 3, 10, 2])
+
+bonuses.shape #1d array
+
+adjusted_scores = scores + bonuses
+adjusted_scores
+
+bonuses2 = np.array([3, 5, 34, 7])
+
+bonuses2.shape
+
+adjusted_scores3 = scores + bonuses
+adjusted_scores3
+
+#replacing values
+array_zero = np.zeros((10, 10))
+
+array_zero[1, :] = 100 #replacing all values from secong row
+array_zero
+
+array_zero.shape
+
+for i in range(10):
+  array_zero[i] = i
+
+array_zero
+
+#NumPy mathematical operations
+array2 = np.arange(0, 10)
+array2
+
+array2 + array2
+array2 - array2
+array2 * array2
+array2 / array2
+
+arr3 = np.arange(1, 101)
+arr3
+
+#ploting aray in a line graph
+import matplotlib.pyplot as plt
+plt.plot(arr3)
+
+#add another line
+#two times smaller than array 3 and 2x larger
+import matplotlib.pyplot as plt
+plt.plot(arr3, color='grey') #source of truth
+plt.plot(arr3 / 2, color='red')
+plt.plot(arr3 * 2, color='blue')
+plt.plot(arr3 ** 3, color='blue') #power of 3
+
+#random walk
+n = 100000 #defining the number of steps
+x = np.zeros(n) #array of 100000 zeros
+y = np.zeros(n)
+
+import random
+val = random.randint(1, 4)
+
+for i in range(1, n):
+  val = random.randint(1, 4)
+
+  if val == 1:
+    x[i] = x[i - 1] + 1 #dot moves x coordinate + 1
+    y[i] = y[i - 1]
+  elif val == 2:
+    x[i] = y[i - 1] - 1 #dot moves x coordinate - 1
+    y[i] = y[i - 1]
+  elif val == 3:
+    x[i] = x[i - 1] #dot moves y coordinate + 1
+    y[i] = y[i - 1] + 1
+  else:
+    x[i] = x[i - 1]
+    y[i] = y[i - 1] + 1  #dot moves y coordinate + 1
+
+
+plt.figure(figsize=(10, 6))  # Increase figure size
+plt.plot(x, y, color='blue', lw=2, alpha=0.7)  # Line with transparency
+plt.scatter(x[0], y[0], c='green', s=100, label='Start')  # Mark start point
+plt.scatter(x[-1], y[-1], c='red', s=100, label='End')  # Mark end point
+
+plt.title('2D Random Walk', fontsize=16)
+plt.xlabel('X-Coordinate')
+plt.ylabel('Y-Coordinate')
+plt.grid(True)
+plt.legend()
+
+plt.show()
+
+plt.scatter(0, 0, color='green', s=100, zorder=5, label='Start Point')  # Start point
+plt.scatter(x[-1], y[-1], color='blue', s=100, zorder=5, label='End Point')  # End point
